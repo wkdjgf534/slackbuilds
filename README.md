@@ -14,7 +14,8 @@
 
 ### Graphics
 
- * graphics/pngcrush
+ * graphics/pngcrus
+ * graphics/sxiv
 
 ### System
 
