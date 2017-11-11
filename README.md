@@ -8,6 +8,7 @@ Here are some of my SlackBuilds for Slackware Linux.
 
 ### Development
 
+ * develpoment/check
  * development/sbcl
 
 ### Games
