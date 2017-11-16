@@ -5,7 +5,6 @@ Here are some of my SlackBuilds for Slackware Linux.
 ### Desktop
 
  * desktop/pekwm
- * desktop/rofi
 
 ### Development
 
