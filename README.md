@@ -24,5 +24,6 @@ Here are some of my SlackBuilds for Slackware Linux.
 
  * system/AnonymousPro
  * system/Iosevka
+ * system/Iosevka-slab
  * system/avfs
  * system/worker
