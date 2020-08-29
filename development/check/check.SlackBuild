@@ -77,7 +77,9 @@ CXXFLAGS="$SLKCFLAGS" \
   --prefix=/usr \
   --libdir=/usr/lib${LIBDIRSUFFIX} \
   --docdir=/usr/doc/$PRGNAM-$VERSION \
+  --infodir=/usr/info \
   --mandir=/usr/man \
+  --disable-static \
   --build=$ARCH-slackware-linux
 
 make
@@ -90,6 +92,7 @@ find $PKG/usr/man -type f -exec gzip -9 {} \;
 for i in $( find $PKG/usr/man -type l ) ; do ln -s $( readlink $i ).gz $i.gz ; rm $i ; done
 
 rm -f $PKG/usr/info/dir
+gzip -9 $PKG/usr/info/*.info*
 rm -rf $PKG/usr/share/doc
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
