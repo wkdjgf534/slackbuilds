@@ -25,7 +25,7 @@
 # Modified by Eugene M., <damagedone at gmx dot com>
 
 PRGNAM=check
-VERSION=${VERSION:-0.15.0}
+VERSION=${VERSION:-0.15.2}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_SBo}
 
@@ -77,8 +77,8 @@ CXXFLAGS="$SLKCFLAGS" \
   --prefix=/usr \
   --libdir=/usr/lib${LIBDIRSUFFIX} \
   --docdir=/usr/doc/$PRGNAM-$VERSION \
-  --infodir=/usr/info \
   --mandir=/usr/man \
+  --infodir=/usr/info \
   --disable-static \
   --build=$ARCH-slackware-linux
 
@@ -91,9 +91,9 @@ find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | gr
 find $PKG/usr/man -type f -exec gzip -9 {} \;
 for i in $( find $PKG/usr/man -type l ) ; do ln -s $( readlink $i ).gz $i.gz ; rm $i ; done
 
-rm -f $PKG/usr/info/dir
+rm -rf $PKG/usr/info/dir
 gzip -9 $PKG/usr/info/*.info*
-rm -rf $PKG/usr/share/doc
+rm -rf $PKG/usr/share/
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 cp -a INSTALL NEWS README THANKS TODO \
